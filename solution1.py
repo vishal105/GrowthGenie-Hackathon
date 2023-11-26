@@ -87,7 +87,7 @@ if __name__ == '__main__':
     print(final_dataframe2)
 
 
-# In[ ]:
+# In[ ]: show these 3 dataframe in both user dashbaoard and bank dashboard, in the form of 3 vertical sliders in 3 columns
 
 
 
