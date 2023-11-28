@@ -6,6 +6,7 @@
 
 import pandas as pd
 import warnings
+from utilities.BusinessAnalysis import BusinessAnalysis
 warnings.filterwarnings('ignore')
 
 def data_loader(file_name, **kwargs):
@@ -195,13 +196,14 @@ def tax_liability(investment_accounts):
 
     
 def main():
-    accounts = data_loader('accounts', parse_dates=['OPENINGDATE', 'LASTTRANSACTIONDATE'])
-    customers = data_loader('customers')
-    fixed_deposits = data_loader('fixed_deposits', parse_dates=['MATURITYDATE'])
-    mutual_funds = data_loader('mutual_funds', parse_dates=['INVESTMENTDATE'])
-    stocks = data_loader('stocks')
-    investment_accounts = data_loader('investment_accounts', parse_dates=['INVESTMENTSTARTDATE', 'INVESTMENTENDDATE'])
-    loans = data_loader('loans', parse_dates = ['DISBURSEMENTDATE'])
+    business = BusinessAnalysis()
+    accounts = business.account_data
+    customers = business.customer_data
+    fixed_deposits = business.fd_data
+    mutual_funds = business.mf_data
+    stocks = business.stocks_data
+    investment_accounts = business.investment_data
+    loans = business.loans_data
     fixed_investment = sliced_data(investment_accounts, 'Fixed Deposits')
     fund_investment = sliced_data(investment_accounts, 'Mutual Funds')
     stock_investment = sliced_data(investment_accounts, 'Stocks')

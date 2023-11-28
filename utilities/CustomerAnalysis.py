@@ -1,7 +1,7 @@
 # customer_analysis.py
 import pandas as pd
 import streamlit as st
-from AzureSqlLoader import AzureSQLLoader
+from utilities.AzureSqlLoader import AzureSQLLoader
 
 class CustomerAnalysis:
     def __init__(self,customer_id):
