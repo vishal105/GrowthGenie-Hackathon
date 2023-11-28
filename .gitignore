@@ -1,2 +1,4 @@
 __pycache__/*
 utilities/__pycache__/CustomerAnalysis.cpython-39.pyc
+utilities/__pycache__/AzureSqlLoader.cpython-39.pyc
+utilities/__pycache__/BusinessAnalysis.cpython-39.pyc
