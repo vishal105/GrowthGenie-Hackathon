@@ -51,4 +51,7 @@ class CustomerAnalysis:
         st.header('Customer Loans')
         st.write(self.customer_loans)
 
-        # Repeat for other datasets
+        # Repeat for other datasets'
+    
+
+
