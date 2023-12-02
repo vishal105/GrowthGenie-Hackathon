@@ -11,7 +11,7 @@ class CustomerAnalysis:
         self.customer_data = self.load_data('Customers',customer_id)
         self.fd_data = self.load_datainv('FixedDeposits',customer_id)
         self.investment_data = self.load_data('InvestmentAccounts',customer_id)
-        self.loans_data = self.load_datainv('Loans',customer_id)
+        self.loans_data = self.load_data('Loans',customer_id)
         self.mf_data = self.load_datainv('MutualFunds',customer_id)
         self.stocks_data = self.load_datainv('Stocks',customer_id)
         self.transactions_data = self.load_dataacc('Transactions',customer_id)

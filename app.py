@@ -5,6 +5,9 @@ from utilities.CustomerAnalysis import CustomerAnalysis
 import pandas as pd
 from css import css
 from dataframe_visualisation import dataframe_visualisation
+import user_dashboard
+from dataframe_visualisation import dataframe_visualisation
+
 
 PAGE_CONFIG = {"page_title":"Personal Finance", 
             #    "page_icon":image, 
@@ -40,13 +43,7 @@ if sidebar_main == 'User Dashboard' :
     if st.button("Details"):
         try:
             usercalled =  int(user_input)
-            user = CustomerAnalysis(usercalled)
-            st.write("Accounts Details")
-            st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
-            st.table(user.account_data)
-            
-        
-            
+            user_dashboard.display_user_dashboard(usercalled)
         except:
             st.write("Issue with Input")
 
