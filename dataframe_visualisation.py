@@ -32,6 +32,8 @@ def fixed_deposits_manipulation(fixed_deposits1):
     fixed_vol1 = fixed_vol1.sort_values(by=['INTERESTRATE'], ascending=False).reset_index(drop=True)
     fixed_vol1 = fixed_vol1.drop('CLIENTCOUNT', axis=1)
     fixed_vol1 = fixed_vol1.rename(columns={'FIXEDDEPOSITID': 'Fixed Deposit', 'INTERESTRATE': 'Rate'})
+    fixed_vol1 = fixed_vol1.drop_duplicates(subset = ['Fixed Deposit'])
+    fixed_vol1 = fixed_vol1.reset_index(drop = True)
     first_10_entries = fixed_vol1.take([i for i in range(10)])
     return first_10_entries
 
@@ -47,6 +49,8 @@ def mutual_fund_manipulations(mutual_funds1):
     fixed_vol1 = fixed_vol1.sort_values(by=['RETURNS'], ascending=False).reset_index(drop=True)
     fixed_vol1 = fixed_vol1.drop(['CLIENTCOUNT', 'MUTUALFUNDID'], axis=1)
     fixed_vol1 = fixed_vol1.rename(columns={'FUNDNAME': 'Fund Name', 'RETURNS': 'CAGR'})
+    fixed_vol1 = fixed_vol1.drop_duplicates(subset = ['Fund Name'])
+    fixed_vol1 = fixed_vol1.reset_index(drop = True)
     first_10_entries = fixed_vol1.take([i for i in range(10)])
     return first_10_entries
 
@@ -59,6 +63,8 @@ def stock_manipulations(stocks1):
     fixed_vol1 = fixed_vol1.sort_values(by=['RETURNS'], ascending=False).reset_index(drop=True)
     fixed_vol1 = fixed_vol1.drop(['CLIENTCOUNT', 'STOCKID'], axis=1)
     fixed_vol1 = fixed_vol1.rename(columns={'STOCKNAME': 'Stock Name', 'RETURNS': 'CAGR'})
+    fixed_vol1 = fixed_vol1.drop_duplicates(subset = ['Stock Name'])
+    fixed_vol1 = fixed_vol1.reset_index(drop = True)
     first_10_entries = fixed_vol1.take([i for i in range(10)])
     return first_10_entries
 
@@ -71,6 +77,8 @@ def manipulations_sol2(fixed_deposits_sol2, mutual_funds_sol2, stocks_sol2):
     fixed_deposits_frame = fixed_deposits_frame.drop('INVESTMENTACCOUNTID', axis = 1)
     fixed_deposits_frame = fixed_deposits_frame.sort_values(by = 'RETURNS', ascending = False).reset_index(drop = True)
     fixed_deposits_frame = fixed_deposits_frame.rename(columns = {'FIXEDDEPOSITID' : 'Fixed Deposit', 'RETURNS' : 'CAGR'})
+    fixed_deposits_frame = fixed_deposits_frame.drop_duplicates(subset = ['Fixed Deposit'])
+    fixed_deposits_frame = fixed_deposits_frame.reset_index(drop = True)
     fixed_top = fixed_deposits_frame.take([i for i in range(3)])
     mutual = mutual_funds_sol2.dropna()
     mutual['FUNDNAME.1'] = mutual['FUNDNAME'].values + ' ' + mutual['FUNDTYPE'].values
@@ -79,12 +87,16 @@ def manipulations_sol2(fixed_deposits_sol2, mutual_funds_sol2, stocks_sol2):
     mutual = mutual.drop(['INVESTMENTACCOUNTID', 'MUTUALFUNDID'], axis = 1)
     mutual = mutual.sort_values(by = 'RETURNS', ascending = False).reset_index(drop = True)
     mutual = mutual.rename(columns = {'FUNDNAME' : 'Fund Name', 'RETURNS' : 'CAGR'})
+    mutual = mutual.drop_duplicates(subset = ['Fund Name'])
+    mutual = mutual.reset_index(drop =True)
     mutual_top = mutual.take([i for i in range(3)])
     mutual_top = mutual_top[['Fund Name', 'CAGR']]
     stock = stocks_sol2.dropna()
     stock = stock.drop(['INVESTMENTACCOUNTID', 'STOCKID'], axis = 1)
     stock = stock.sort_values(by = 'RETURNS', ascending = False).reset_index(drop = True)
     stock = stock.rename(columns = {'STOCKNAME' : 'Stock Name', 'RETURNS' : 'CAGR'})
+    stock = stock.drop_duplicates(subset = ['Stock Name'])
+    stock = stock.reset_index(drop = True)
     stock_top = stock.take([i for i in range(3)])
     return fixed_top, mutual_top, stock_top
 
@@ -235,4 +247,3 @@ def dataframe_visualisation():
     tax_liability1 = tax_liability(investment_accounts)
     return final_dataframe, final_dataframe1, final_dataframe2, fixed_top, mutual_top, stock_top, new_data, cust_returns, tax_liability1
     
-
