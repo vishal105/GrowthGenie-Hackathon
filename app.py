@@ -4,40 +4,7 @@ import markdown as md
 from utilities.CustomerAnalysis import CustomerAnalysis
 import pandas as pd
 from css import css
-
-
-# Function to create Streamlit app for displaying customer account details
-def display_customer_details(customer):
-    st.subheader("Customer Account Details")
-
-    # Display user data in a nicely formatted way
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.write(f'**Customer Id:** {customer["CUSTOMERID"].iloc[0]}')
-        st.write(f'**Name:** {customer["FIRSTNAME"].iloc[0]} {customer["LASTNAME"].iloc[0]}')
-        st.write(f'**DOB:** {customer["DATEOFBIRTH"].iloc[0]}')
-
-    with col2:
-        st.write(f'**Gender:** {map_gender(customer["GENDER"].iloc[0])}')
-        st.write(f'**Phone:** {customer["PHONE"].iloc[0].replace(".", "-")}')
-        st.write(f'**Email:** {customer["EMAIL"].iloc[0]}')
-
-    st.write(f'**Address:** {customer["ADDRESS"].iloc[0]}')
-
-    # Function to map gender codes to human-readable strings
-def map_gender(gender_code):
-    if gender_code == 'M':
-        return 'Male'
-    elif gender_code == 'F':
-        return 'Female'
-    else:
-        return 'Unknown'
-
-def display_data(data, header):
-    # if not data.empty:
-        st.subheader(header)
-        st.write(data)
+import user_dashboard
 
 
 PAGE_CONFIG = {"page_title":"Personal Finance", 
@@ -74,20 +41,6 @@ if sidebar_main == 'User Dashboard' :
     if st.button("Details"):
         try:
             usercalled =  int(user_input)
-            user = CustomerAnalysis(usercalled)
-            customer = user.customer_data
-            # Display customer details using the function
-            display_customer_details(customer)
-            display_data(user.account_data, "Account Details")
-            display_data(user.fd_data, "FD Details")
-            display_data(user.investment_data, "Investment Details")
-            display_data(user.loans_data, "Loan Details")
-            display_data(user.mf_data, "Mutual Fund Details")
-            display_data(user.stocks_data, "Stock Details")
-            display_data(user.transactions_data, "Transaction History")
-        
-            
-        
-            
+            user_dashboard.display_user_dashboard(usercalled)
         except:
             st.write("Issue with Input")
