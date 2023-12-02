@@ -195,7 +195,7 @@ def tax_liability(investment_accounts):
     return total_tax_liabilities
 
     
-def main():
+def dataframe_visualisation():
     business = BusinessAnalysis()
     accounts = business.account_data
     customers = business.customer_data
@@ -234,21 +234,5 @@ def main():
     cust_returns = returns(investment_accounts, customers)
     tax_liability1 = tax_liability(investment_accounts)
     return final_dataframe, final_dataframe1, final_dataframe2, fixed_top, mutual_top, stock_top, new_data, cust_returns, tax_liability1
-if __name__ == '__main__':
-    final_dataframe, final_dataframe1, final_dataframe2, fixed, mutual, stock, new_data, cust_returns, tax_liability = main()
-    print("Solution 1 for both user and bank to be present in 3 columns in the form of sliders:")
-    solution1 = pd.concat([final_dataframe, final_dataframe1, final_dataframe2], axis = 1)
-    print(solution1)
-    print("Solution 2 top 3 performining investment to be shown for both user and bank in the form of 3 cards, 3 rows segmenting each type:")
-    solution2 = pd.concat([fixed, mutual, stock], axis = 1)
-    print(solution2)
-    print('''Solution 3 (view only for banks) top 10 customers net woth in pie chart and products in 3 seaborn charts,
-          download button to download and view the entire dataframe''')
-    print(new_data)
-    print('''Solution 4 (view only for bank, convert this dataframe to pandas stylers and just write it on streamlit using
-    st.write(cust_returns))''')
-    print(cust_returns)
-    print('''Solution 5 (view only for customer, link customer id with login  and show gains and tax liability as one/two
-          cards on top of the dashboard)''')
-    print(tax_liability)
+    
 
