@@ -6,7 +6,6 @@ import pandas as pd
 from css import css
 from dataframe_visualisation import dataframe_visualisation
 import user_dashboard
-from dataframe_visualisation import dataframe_visualisation
 
 
 PAGE_CONFIG = {"page_title":"Personal Finance", 
