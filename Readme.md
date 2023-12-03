@@ -98,6 +98,7 @@ Personal Finance
 * version control - git 
 * backend - streamlit
 * concept - OOP
+* Cloud Technologies used- Azure Storage, Azure Data Factory, Azure SQL, Azure DataLake, Azure WebApp.
 
 ## Tools and Services : 
 * IDE - Vs code 
