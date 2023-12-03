@@ -9,7 +9,6 @@ Clairvoyant, an EXL company, is a global technology consulting and services lead
 <p align = 'center' >
     <img alt = 'home_image' src = 'results/result.gif'>
 </p>
-----------------------------
 
 ## High Level Design :
 * Data Source: The data source is shown as a computer. This can be any device or system that generates data, such as a web server, a database, or an IoT device.
@@ -25,10 +24,6 @@ Here are some additional details that are not shown in the diagram:
 * The data can be in real-time or batch-oriented.
 * The data can be accessed from anywhere in the world.
 * The data is secure and can be protected with access control and encryption.
-
-------------------------------
-
-----------------------------
 
 ## Approach : 
 
