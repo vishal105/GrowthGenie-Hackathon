@@ -9,11 +9,6 @@ import warnings
 from utilities.BusinessAnalysis import BusinessAnalysis
 warnings.filterwarnings('ignore')
 
-def data_loader(file_name, **kwargs):
-    file_path = r'C:\Users\Akriti Kakkar\Downloads\GrowthGenie-Hackathon-main\GrowthGenie-Hackathon-main\dataset\{}.xlsx'.format(file_name)
-    data = pd.read_excel(file_path, **kwargs)
-    return data
-
 def sliced_data(data, type):
     sliced_data = data[data['ACCOUNTTYPE'] == type].reset_index(drop=True)
     return sliced_data
