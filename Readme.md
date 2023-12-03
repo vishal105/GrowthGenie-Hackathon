@@ -12,9 +12,7 @@ Clairvoyant, an EXL company, is a global technology consulting and services lead
 ----------------------------
 
 ## High Level Design :
-<p align = 'center' >
-    <img alt = 'home_image' src = 'image.png'>
-</p>
+![HLD IMAGE](image.png)
 
 * So Initially I have used an <code>.ipynb</code> file to do the preprocessing and do some visualization
 
