@@ -6,6 +6,25 @@ import pandas as pd
 from css import css
 from dataframe_visualisation import dataframe_visualisation
 import user_dashboard
+import os
+from dotenv import load_dotenv
+import openai
+from streamlit.logger import get_logger
+import json
+
+logger = get_logger(__name__)
+
+load_dotenv()
+openai.api_type = "azure" # api type
+openai.api_base = "https://htioaiservice.openai.azure.com/" #API BASE
+openai.api_version = "2022-12-01" #Version
+openai.api_key = os.getenv('api_key')
+
+model_names = {
+    "restaurant": "text-davinci-003",
+    "htiOaiDEP": "gpt-35-turbo",
+    # Add more modles as needed
+}
 
 
 PAGE_CONFIG = {"page_title":"Personal Finance", 
@@ -17,7 +36,7 @@ st.set_page_config(**PAGE_CONFIG)
 
 st.sidebar.markdown("## Controls")
 # sidebar_main = st.sidebar.selectbox('Navigation', ['About the Project', 'EDA', 'Predictions', 'Q&A'])
-sidebar_main = st.sidebar.selectbox('Navigation', ['Home', 'User Dashboard','Business Visualisation'])
+sidebar_main = st.sidebar.selectbox('Navigation', ['Home', 'User Dashboard','Business Visualisation','QNA-ChatBot'])
 
 if sidebar_main == 'Home' : 
     st.title('GrowthGenie App')
@@ -185,3 +204,25 @@ if sidebar_main == 'Business Visualisation' :
         st.write('Enter Bank Pin!')
     else:
         st.write('Invalid Pin!')
+
+if sidebar_main == 'QNA-ChatBot' :
+    st.title('GrowthGenie App')
+    global assistant_table  # Add global declaration for the variable
+    # User Input
+    user_input = st.text_area("User Input:", "")
+    prompt = "You are a GrowthGenie App Financial Consultant Chat Bot. Act as a Finance Expert and give answer in the language user has asked"
+    # Initialize prompt if not in session state
+    # Generate Response Button
+    if st.button("Generate Response"):
+        # Split the prompt into lines to separate CSV data
+        # Generate a response based on the user input
+        input_prompt =prompt + user_input
+        response = openai.Completion.create(
+            engine="restaurant",
+            prompt=input_prompt,
+            temperature=0.1,
+            max_tokens=1000,
+        )
+        assistant_reply = response.choices[0].text.strip()
+        logger.info(assistant_reply)
+        st.write(assistant_reply)
