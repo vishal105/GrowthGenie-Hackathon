@@ -104,11 +104,36 @@ Personal Finance
 * IDE - Vs code 
 * Application Deployment - Azure WebApp
 * Code Repository - GitHub
-* Dataset - SQL DB
+* Dataset -Azure SQL DB, Storage Account and Data  Lake.
 
 
 -----------------------
 <br>
+
+## How to Setup:
+
+Welcome to my GrowthGenie app! To get started, follow the steps below to set up your environment variables:
+
+### Setup Environment Variables
+
+1. **Create a Virtual Environment:**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+
+2. **Install Dependencies::**
+pip install -r requirements.txt
+
+3. **Set Environment Variables:**
+echo "export SERVER=my_server_address" >> venv/bin/activate
+echo "export DATABASE=my_database_name" >> venv/bin/activate
+echo "export USER=my_database_user" >> venv/bin/activate
+echo "export PASSWORD=my_database_password" >> venv/bin/activate
+echo "export AZURE_KEY=my_azure_key" >> venv/bin/activate
+
+4. **Activate the Virtual Environment and run the app:**
+source venv/bin/activate
+streamlit run app.py
 
 # If you Liked this project the you can consider connecting with me:
 * [Shreyans Bardia](https://www.linkedin.com/in/shreyans-bardia/) 

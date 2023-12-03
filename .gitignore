@@ -5,3 +5,8 @@ utilities/__pycache__/BusinessAnalysis.cpython-39.pyc
 utilities/__pycache__/AzureSqlLoader.cpython-311.pyc
 utilities/__pycache__/BusinessAnalysis.cpython-311.pyc
 utilities/__pycache__/CustomerAnalysis.cpython-311.pyc
+.idea/hack-code.iml
+.gitignore
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/modules.xml
