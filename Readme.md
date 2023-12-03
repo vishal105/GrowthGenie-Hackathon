@@ -12,13 +12,20 @@ Clairvoyant, an EXL company, is a global technology consulting and services lead
 ----------------------------
 
 ## High Level Design :
-![Alt text](image.png)
 
-* So Initially I have used an <code>.ipynb</code> file to do the preprocessing and do some visualization
+* Data Source: The data source is shown as a computer. This can be any device or system that generates data, such as a web server, a database, or an IoT device.
+* Data Ingestion: Data is ingested into Azure Data Lake Storage Gen2 using the HTTP Connector. This connector can be used to ingest data from a variety of sources, including web APIs, databases, and files.
+* Data Transformation: Once data is in Azure Data Lake Storage Gen2, it can be transformed using various tools and services. The diagram shows Azure Data Factory being used for transformation. Azure Data Factory is a serverless data integration and ETL/ELT service that can be used to orchestrate and automate data movement and transformation.
+* Data Storage: After transformation, the data is stored in Azure Data Lake Storage Gen2. This is a scalable and secure storage system that can store petabytes of data.
+* Data Analysis: Data can be analyzed using a variety of tools and services. The diagram shows Azure SQL Database and Streamlit being used for analysis. Azure * * SQL Database is a relational database service that can be used to run SQL queries on the data. Streamlit is a Python library that can be used to create interactive data dashboards and applications.
+* Data Publication: Data can be published to other systems and services. The diagram shows Azure Data Lake Storage Gen2 being used to publish data to Azure Blob * Storage and ML Models. Azure Blob Storage is another object storage service that can be used to store data. ML Models can be used to train and deploy machine learning models on the data.
+* Azure Data Lake can be used to store, transform, and analyze data from a variety of sources. This can be used to power a variety of applications, such as data analytics, machine learning, and artificial intelligence.
 
-* Then I have made another Utilities Folder which contain <code>BusinessAnalysis.py</code> <code>CustomerAnalysis.py</code> to implement all the functions related to preprocessing and plotting
-
-* I have imported the same file in <code>app.py</code> and used it along with streamlit to build the app.
+Here are some additional details that are not shown in the diagram:
+* The data can be structured, semi-structured, or unstructured.
+* The data can be in real-time or batch-oriented.
+* The data can be accessed from anywhere in the world.
+* The data is secure and can be protected with access control and encryption.
 
 ------------------------------
 
@@ -85,6 +92,7 @@ Personal Finance
     <img src="https://img.shields.io/badge/streamlit-%23F05033.svg?style=for-the-badge&logo=streamlit&logoColor=white">
     <img src="https://img.shields.io/badge/plotly-%037FFC.svg?style=for-the-badge&logo=plotly&logoColor=white">
     <img src="https://img.shields.io/badge/vscode-%23190458.svg?style=for-the-badge&logo=visualstudio&logoColor=white">
+    <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white">
 </p>
 
 ## Technologies used : 
