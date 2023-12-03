@@ -70,12 +70,15 @@ Personal Finance
 |   |---- __pycache__
 |   |---- BusinessAnalysis.py
 |   |---- CustomerAnalysis.py
+|   |---- AzureSqlLoader.py
+|   |---- testclass.ipynb
 |   
 |
 |
 |---- app.py
 |---- auth.py
-|---- .py
+|---- user_dashboard.py
+|---- dataframe_visualisation.py
 |---- markdown.py
 |---- Procfile 
 |---- README.md
@@ -112,4 +115,4 @@ Personal Finance
 <br>
 
 # If you Liked this project the you can consider connecting with me:
-* [LinkedIn](https://www.linkedin.com/in/shreyans-bardia/) 
+* [Shreyans Bardia](https://www.linkedin.com/in/shreyans-bardia/) 
