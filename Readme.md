@@ -9,6 +9,20 @@ Clairvoyant, an EXL company, is a global technology consulting and services lead
 <p align = 'center' >
     <img alt = 'home_image' src = 'results/result.gif'>
 </p>
+----------------------------
+
+## High Level Design :
+<p align = 'center' >
+    <img alt = 'home_image' src = 'image.png'>
+</p>
+
+* So Initially I have used an <code>.ipynb</code> file to do the preprocessing and do some visualization
+
+* Then I have made another Utilities Folder which contain <code>BusinessAnalysis.py</code> <code>CustomerAnalysis.py</code> to implement all the functions related to preprocessing and plotting
+
+* I have imported the same file in <code>app.py</code> and used it along with streamlit to build the app.
+
+------------------------------
 
 ----------------------------
 

@@ -1,14 +1,18 @@
 import pandas as pd
 import pyodbc
+import os
+from dotenv import load_dotenv
+
 
 class AzureSQLLoader:
     def __init__(self, server: str = None, database: str = None, username: str = None, password: str = None, driver: str = "{ODBC Driver 17 for SQL Server}"):
-        self.server: str = server if server else "tcp:sqldsde.database.windows.net,1433"
-        self.database: str = database if database else"sqlde"
-        self.username: str = username if username else "azureadmin"
-        self.password: str = password if password else "Germany1234@"
+        load_dotenv()
+        self.server: str = server if server else os.getenv('server')
+        self.database: str = database if database else os.getenv('database')
+        self.username: str = username if username else os.getenv('userazure')
+        self.password: str = password if password else os.getenv('password')
         self.driver: str = driver
-
+        print(self.username)
         # Initialize connection attribute to None
         self.conn = None
 
@@ -19,6 +23,7 @@ class AzureSQLLoader:
         try:
             # Create a connection string
             conn_str = f'DRIVER={self.driver};SERVER={self.server};DATABASE={self.database};Uid={self.username};Pwd={self.password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+            print(conn_str)
 
             # Establish a connection
             self.conn = pyodbc.connect(conn_str)
