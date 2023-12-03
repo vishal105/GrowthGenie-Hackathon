@@ -136,4 +136,6 @@ source venv/bin/activate
 streamlit run app.py
 
 # If you Liked this project the you can consider connecting with me:
-* [Shreyans Bardia](https://www.linkedin.com/in/shreyans-bardia/) 
+* [Akriti Kakkar](http://linkedin.com/in/akriti-k-658849178)/) 
+* [Shreyans Bardia](https://www.linkedin.com/in/shreyans-bardia/)
+* [Vishal Sojitra](https://www.linkedin.com/in/vishal-sojitra-dh/) 
