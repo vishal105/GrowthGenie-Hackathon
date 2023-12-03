@@ -12,7 +12,6 @@ Clairvoyant, an EXL company, is a global technology consulting and services lead
 ----------------------------
 
 ## High Level Design :
-<img src="image.png">
 * Data Source: The data source is shown as a computer. This can be any device or system that generates data, such as a web server, a database, or an IoT device.
 * Data Ingestion: Data is ingested into Azure Data Lake Storage Gen2 using the HTTP Connector. This connector can be used to ingest data from a variety of sources, including web APIs, databases, and files.
 * Data Transformation: Once data is in Azure Data Lake Storage Gen2, it can be transformed using various tools and services. The diagram shows Azure Data Factory being used for transformation. Azure Data Factory is a serverless data integration and ETL/ELT service that can be used to orchestrate and automate data movement and transformation.
